@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "polarization-detection"
+version = "1.0.0"
+description = "Multilingual, Multicultural and Multievent Online Polarization Detection in English and Swahili using Pretrained Transformers"
+readme = "README.md"
+authors = [
+    { name = "dev-svald", email = "30782937@sun.ac.za" }
+]
+license = { text = "MIT" }
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Linguistic",
+]
+dependencies = [
+    "torch>=2.0.0",
+    "transformers>=4.30.0",
+    "scikit-learn>=1.2.0",
+    "pandas>=1.5.0",
+    "numpy>=1.23.0",
+    "tqdm>=4.65.0",
+]
+
+[project.optional-dependencies]
+nlp = [
+    "emoji>=2.8.0",
+    "nltk>=3.8.0",
+]
+visualization = [
+    "matplotlib>=3.6.0",
+    "seaborn>=0.12.0",
+]
+notebooks = [
+    "jupyterlab>=4.0.0",
+    "ipywidgets>=8.0.0",
+]
+dev = [
+    "pytest>=7.0.0",
+    "ruff>=0.1.0",
+]
+all = [
+    "emoji>=2.8.0",
+    "nltk>=3.8.0",
+    "matplotlib>=3.6.0",
+    "seaborn>=0.12.0",
+    "jupyterlab>=4.0.0",
+    "ipywidgets>=8.0.0",
+    "pytest>=7.0.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
